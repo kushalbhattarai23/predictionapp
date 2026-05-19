@@ -33,6 +33,7 @@ import PredictionRules from '@/apps/prediction/pages/PredictionRules';
 import PredictionAdmin from '@/apps/prediction/pages/PredictionAdmin';
 
 import NativeAppHandler from '@/components/NativeAppHandler';
+import { AppLayout } from '@/components/Layout/AppLayout';
 
 const queryClient = new QueryClient({
   defaultOptions: {
