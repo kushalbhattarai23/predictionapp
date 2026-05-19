@@ -55,28 +55,28 @@ function App() {
                 <div className="min-h-screen bg-background">
                   <Routes>
                     <Route path="/landing" element={<Landing />} />
-                    <Route path="/" element={<AppLayout><Index /></AppLayout>} />
+                    <Route path="/" element={<Index />} />
 
                     <Route path="/login" element={<RedirectIfAuth><Login /></RedirectIfAuth>} />
                     <Route path="/signup" element={<RedirectIfAuth><SignUp /></RedirectIfAuth>} />
 
-                    <Route path="/profile" element={<RequireAuth><AppLayout><Profile /></AppLayout></RequireAuth>} />
-                    <Route path="/settings" element={<RequireAuth><AppLayout><Settings /></AppLayout></RequireAuth>} />
+                    <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
+                    <Route path="/settings" element={<RequireAuth><Settings /></RequireAuth>} />
 
-                    <Route path="/admin" element={<RequireAuth><RequireAdmin><AppLayout><AdminDashboard /></AppLayout></RequireAdmin></RequireAuth>} />
-                    <Route path="/admin/users" element={<RequireAuth><RequireAdmin><AppLayout><AdminUsers /></AppLayout></RequireAdmin></RequireAuth>} />
-                    <Route path="/admin/content" element={<RequireAuth><RequireAdmin><AppLayout><AdminContent /></AppLayout></RequireAdmin></RequireAuth>} />
+                    <Route path="/admin" element={<RequireAuth><RequireAdmin><AdminDashboard /></RequireAdmin></RequireAuth>} />
+                    <Route path="/admin/users" element={<RequireAuth><RequireAdmin><AdminUsers /></RequireAdmin></RequireAuth>} />
+                    <Route path="/admin/content" element={<RequireAuth><RequireAdmin><AdminContent /></RequireAdmin></RequireAuth>} />
 
-                    <Route path="/prediction" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionDashboard /></AppLayout></RequireAppEnabled></RequireAuth>} />
-                    <Route path="/prediction/matches" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionMatches /></AppLayout></RequireAppEnabled></RequireAuth>} />
-                    <Route path="/prediction/leaderboard" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionLeaderboard /></AppLayout></RequireAppEnabled></RequireAuth>} />
-                    <Route path="/prediction/rooms" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionRooms /></AppLayout></RequireAppEnabled></RequireAuth>} />
-                    <Route path="/prediction/rooms/:roomId" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionRoomDetail /></AppLayout></RequireAppEnabled></RequireAuth>} />
-                    <Route path="/prediction/rules" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionRules /></AppLayout></RequireAppEnabled></RequireAuth>} />
-                    <Route path="/prediction/admin" element={<RequireAuth><RequireAppEnabled appKey="prediction"><AppLayout><PredictionAdmin /></AppLayout></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionDashboard /></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction/matches" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionMatches /></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction/leaderboard" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionLeaderboard /></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction/rooms" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionRooms /></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction/rooms/:roomId" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionRoomDetail /></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction/rules" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionRules /></RequireAppEnabled></RequireAuth>} />
+                    <Route path="/prediction/admin" element={<RequireAuth><RequireAppEnabled appKey="prediction"><PredictionAdmin /></RequireAppEnabled></RequireAuth>} />
 
                     <Route path="/home" element={<Navigate to="/" replace />} />
-                    <Route path="*" element={<AppLayout><NotFound /></AppLayout>} />
+                    <Route path="*" element={<NotFound />} />
                   </Routes>
                 </div>
                 <Toaster />
