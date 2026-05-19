@@ -5,8 +5,7 @@ import { useAppSettings } from '@/hooks/useAppSettings';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
-  LogOut, Tv, DollarSign, Film, Receipt, Globe, Home, Package, Layers, Zap,
-  Image as ImageIcon, Bug, ChevronLeft, ChevronRight
+  LogOut, Globe, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
@@ -72,24 +71,15 @@ export const Header: React.FC = () => {
     try { await logout(); } catch (error) { console.error('Logout error:', error); }
   };
 
-  const allQuickLinks = [
-    { path: '/tv-shows', icon: Tv, label: 'TV Shows', appKey: 'tvShows' as const },
-    { path: '/finance', icon: DollarSign, label: 'Finance', appKey: 'finance' as const },
-    { path: '/movies', icon: Film, label: 'Movies', appKey: 'movies' as const },
-    { path: '/settlebill', icon: Receipt, label: 'SettleBill', appKey: 'settlebill' as const },
-    { path: '/household', icon: Home, label: 'Household', appKey: 'household' as const },
-    { path: '/inventory', icon: Package, label: 'Inventory', appKey: 'inventory' as const },
-    { path: '/shared-universe', icon: Layers, label: 'Shared Universe', appKey: 'sharedUniverse' as const },
-    { path: '/store', icon: Zap, label: 'QuickCommerce', appKey: 'quickCommerce' as const },
-    { path: '/images', icon: ImageIcon, label: 'Images', appKey: 'images' as const },
-    { path: '/qa', icon: Bug, label: 'QA', appKey: 'qa' as const },
-  ];
-
   const quickLinks = user
-    ? allQuickLinks.filter(link => settings.enabledApps[link.appKey])
+    ? [
+        ...(settings.enabledApps.prediction ? [{ path: '/prediction', icon: Globe, label: 'Prediction' }] : []),
+        ...(settings.enabledApps.admin ? [{ path: '/admin', icon: Globe, label: 'Admin' }] : []),
+        { path: '/settings', icon: Globe, label: 'Settings' },
+      ]
     : [
-        { path: '/public/universes', icon: Globe, label: 'Public Universes', appKey: 'public' as const },
-        { path: '/public/shows', icon: Tv, label: 'Public Shows', appKey: 'public' as const },
+        { path: '/login', icon: Globe, label: 'Sign In' },
+        { path: '/signup', icon: Globe, label: 'Sign Up' },
       ];
 
   return (
