@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAppSettings } from '@/hooks/useAppSettings';
 import { useAuth } from '@/hooks/useAuth';
-import { AppLayout } from '@/components/Layout/AppLayout';
 import { ShieldX } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
@@ -30,8 +29,7 @@ const RequireAppEnabled: React.FC<RequireAppEnabledProps> = ({ appKey, children 
 
   if (!settings.enabledApps[appKey]) {
     return (
-      <AppLayout>
-        <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 p-8 text-center">
+      <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 p-8 text-center">
           <div className="rounded-full bg-destructive/10 p-4">
             <ShieldX className="h-12 w-12 text-destructive" />
           </div>
@@ -49,8 +47,7 @@ const RequireAppEnabled: React.FC<RequireAppEnabledProps> = ({ appKey, children 
           <Button variant="outline" onClick={() => navigate('/')}>
             Go to Home
           </Button>
-        </div>
-      </AppLayout>
+      </div>
     );
   }
 

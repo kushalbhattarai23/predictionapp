@@ -32,97 +32,16 @@ const Index = () => {
   };
 
   const handleAppSelect = (appId: string) => {
-    // When user is not logged in, show all apps but redirect to login for protected routes
-    switch (appId) {
-      case 'tv-shows':
-        if (user) {
-          if (settings.enabledApps.tvShows) {
-            navigate('/tv-shows');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'finance':
-        if (user) {
-          if (settings.enabledApps.finance) {
-            navigate('/finance');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'movies':
-        if (user) {
-          if (settings.enabledApps.movies) {
-            navigate('/movies');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'settlebill':
-        if (user) {
-          if (settings.enabledApps.settlebill) {
-            navigate('/settlebill');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'household':
-        if (user) {
-          if (settings.enabledApps.household) {
-            navigate('/household');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'inventory':
-        if (user) {
-          if (settings.enabledApps.inventory) {
-            navigate('/inventory');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'images':
-        if (user) {
-          if (settings.enabledApps.images) {
-            navigate('/images');
-          }
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'prediction':
-        if (user) { if (settings.enabledApps.prediction) navigate('/prediction'); }
-        else navigate('/login');
-        break;
-      case 'qa':
-        if (user) {
-          navigate('/qa');
-        } else {
-          navigate('/login');
-        }
-        break;
-      case 'public':
-        if (user ? settings.enabledApps.public : true) {
-          navigate('/public/shows');
-        }
-        break;
-      case 'admin':
-        if (user && settings.enabledApps.admin) {
-          navigate('/admin');
-        } else if (!user) {
-          navigate('/login');
-        }
-        break;
-      default:
-        console.log('Unknown app selected:', appId);
+    if (appId !== 'prediction') return;
+
+    if (user) {
+      if (settings.enabledApps.prediction) {
+        navigate('/prediction');
+      }
+      return;
     }
+
+    navigate('/login');
   };
 
   return (
