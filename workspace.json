@@ -1,0 +1,38 @@
+
+{
+  "name": "monorepo-apps",
+  "version": "1.0.0",
+  "description": "A monorepo containing multiple applications",
+  "apps": [
+    {
+      "name": "movies",
+      "path": "apps/movies",
+      "description": "Movie tracking and watchlist application"
+    },
+    {
+      "name": "settlegara",
+      "path": "apps/settlegara", 
+      "description": "Bill splitting and expense management application"
+    },
+    {
+      "name": "admin",
+      "path": "apps/admin",
+      "description": "Administration panel (placeholder)"
+    },
+    {
+      "name": "finance", 
+      "path": "apps/finance",
+      "description": "Personal finance management (placeholder)"
+    },
+    {
+      "name": "tv-shows",
+      "path": "apps/tv-shows", 
+      "description": "TV show tracking application (placeholder)"
+    }
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}

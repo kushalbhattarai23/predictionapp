@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /finance/
+Disallow: /tv-shows/
+Disallow: /movies/
+Disallow: /settlebill/
+Disallow: /profile
+Disallow: /settings
+
+# Public pages
+Allow: /landing
+Allow: /public/
+Allow: /sitemap
+Allow: /terms-of-service
+Allow: /privacy-policy
+Allow: /login
+Allow: /signup
+Allow: /requests
+
+# Sitemap
+Sitemap: https://trackerhub.netlify.app/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /

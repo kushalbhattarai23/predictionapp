@@ -1,0 +1,1 @@
+ALTER TABLE public.settlegara_bills ADD COLUMN IF NOT EXISTS bill_image_url text;

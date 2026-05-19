@@ -1,0 +1,7 @@
+project_id = "gzampnmelaeqhwzzsvam"
+
+[functions.extract-bill-ocr]
+verify_jwt = false
+
+[functions.prediction-admin-create-user]
+verify_jwt = true

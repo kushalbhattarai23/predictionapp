@@ -1,0 +1,180 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 270 100% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 270 100% 97%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 270 100% 97%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 270 50% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 270 30% 95%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 270 30% 95%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 270 30% 95%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 20% 90%;
+    --input: 270 20% 90%;
+    --ring: 270 50% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 270 80% 96%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 270 50% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 270 60% 93%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 270 30% 85%;
+    --sidebar-ring: 270 50% 60%;
+
+    /* App-specific colors */
+    --settlegara-primary: 0 84% 60%;
+    --settlegara-secondary: 0 70% 95%;
+    --settlegara-accent: 0 80% 90%;
+    
+    --settlebill-primary: 346 77% 65%;
+    --settlebill-secondary: 30 54% 95%;
+    --settlebill-accent: 346 50% 90%;
+    
+    --movies-primary: 220 100% 25%;
+    --movies-secondary: 220 30% 95%;
+    --movies-accent: 220 50% 90%;
+  }
+
+  .dark {
+    --background: 270 30% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 270 30% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 270 30% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 270 50% 70%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 270 20% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 270 20% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 270 20% 15%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 270 50% 70%;
+    --sidebar-background: 270 40% 8%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 270 50% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 30% 12%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 270 30% 15%;
+    --sidebar-ring: 270 50% 70%;
+
+    /* App-specific colors for dark mode */
+    --settlegara-primary: 0 84% 65%;
+    --settlegara-secondary: 0 30% 15%;
+    --settlegara-accent: 0 40% 20%;
+    
+    --settlebill-primary: 346 77% 70%;
+    --settlebill-secondary: 30 30% 15%;
+    --settlebill-accent: 346 40% 20%;
+    
+    --movies-primary: 220 100% 70%;
+    --movies-secondary: 220 30% 15%;
+    --movies-accent: 220 40% 20%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Force finance routes to use a green-first palette. */
+  .finance-theme {
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 142 71% 45%;
+    --secondary: 138 45% 94%;
+    --accent: 138 45% 94%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-ring: 142 71% 45%;
+  }
+
+  .dark .finance-theme {
+    --primary: 142 69% 52%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --ring: 142 69% 52%;
+    --secondary: 142 28% 18%;
+    --accent: 142 28% 18%;
+    --sidebar-primary: 142 69% 52%;
+    --sidebar-ring: 142 69% 52%;
+  }
+
+  /* Prediction app theme — stadium dark using oklch */
+  .prediction-theme {
+    --background: 225 25% 9%;
+    --foreground: 225 10% 98%;
+    --card: 225 22% 12%;
+    --card-foreground: 225 10% 98%;
+    --popover: 225 22% 12%;
+    --popover-foreground: 225 10% 98%;
+    --primary: 145 60% 55%;
+    --primary-foreground: 225 25% 9%;
+    --secondary: 225 18% 16%;
+    --secondary-foreground: 225 10% 98%;
+    --muted: 225 18% 16%;
+    --muted-foreground: 225 8% 70%;
+    --accent: 145 40% 22%;
+    --accent-foreground: 225 10% 98%;
+    --border: 225 18% 22%;
+    --input: 225 18% 22%;
+    --ring: 145 60% 55%;
+    --sidebar-background: 225 25% 9%;
+    --sidebar-foreground: 225 10% 95%;
+    --sidebar-primary: 145 60% 55%;
+    --sidebar-primary-foreground: 225 25% 9%;
+    --sidebar-accent: 225 22% 14%;
+    --sidebar-accent-foreground: 225 10% 95%;
+    --sidebar-border: 225 18% 20%;
+    --sidebar-ring: 145 60% 55%;
+    background-color: oklch(0.16 0.025 250);
+    color: oklch(0.98 0.005 250);
+  }
+  .prediction-theme body,
+  body:has(.prediction-theme) {
+    background-color: oklch(0.16 0.025 250);
+    color: oklch(0.98 0.005 250);
+  }
+}
